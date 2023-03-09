@@ -68,7 +68,8 @@ extern {
     #[cfg_attr(any(target_os = "solaris",
                    target_os = "illumos"),
                link_name = "___errno")]
-    #[cfg_attr(target_os = "linux",
+    #[cfg_attr(any(target_os = "linux",
+                   target_os = "redox"),
                link_name = "__errno_location")]
     fn errno_location() -> *mut c_int;
 
